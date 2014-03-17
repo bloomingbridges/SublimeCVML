@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>CVML</string>
+	<key>scopeName</key>
+	<string>text.cvml</string>
+	<key>foldingStartMarker</key>
+	<string>^(\=\=\=\s.*|\s\s\.\s\.)$</string>
+	<key>folingEndMarker</key>
+	<string>^\n\n$</string>
+	<key>fileTypes</key>
+	<array>
+		<string>cvml</string>
+	</array>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>match</key>
+			<string>^\s\s(=|\.)\s(=|\.)*$</string>
+			<key>name</key>
+			<string>keyword.control.separator</string>
+			<key>comment</key>
+			<string>Inline horizontal rule or page break</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^(===)\s(.*)$</string>
+			<key>name</key>
+			<string>entity.name.function</string>
+			<key>comment</key>
+			<string>Section header</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^///</string>
+			<key>end</key>
+			<string>\n$</string>
+			<key>name</key>
+			<string>string.comment.buffered.block.cvml</string>
+			<key>comment</key>
+			<string>Commented line</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s{2}-\s.*$</string>
+			<key>name</key>
+			<string>entity.name.tag.label.cvml</string>
+			<key>comment</key>
+			<string>Labels</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>^\s-{2}\s.*$</string>
+			<key>name</key>
+			<string>entity.name.tag.emphasis.cvml</string>
+			<key>comment</key>
+			<string>Emphasis label</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>markup.raw.yaml.front-matter</string>
+			<key>begin</key>
+			<string>(?&lt;!\s)---\n$</string>
+			<key>end</key>
+			<string>^---\s</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.yaml</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
