@@ -12,3 +12,7 @@ Clone this repository into your _Packages_ folder (Sublime Text > Preferences > 
 - Add rules for markdown blocks
 - Opt for more semenatically appropriate scope names
 - Turn repo into a ST package
+
+## Preview
+
+![Screenshot using SpaceCadet colour scheme](preview.png)
